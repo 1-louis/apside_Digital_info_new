@@ -1,0 +1,117 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Interest i = ViewData["interest"] as Interest;
+
+    Client c = ViewData["client"] as Client;
+}
+<section class="page-title" style="background-image: url(/assets/images/background/1.jpg)">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Consulting expertise </h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Client</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="sidebar-widget-two about-widget">
+	<div class="widget-content">
+		<!-- Sidebar Title -->
+		<div class="sidebar-title-two">
+			<h5>About Me</h5>
+		</div>
+	
+		<div class="lower-content">
+			<h6>@c.Firstname | @c.Lastname</h6>
+			<div class="text">@c.Email</div>
+			<a class="theme-btn reply-btn" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+
+			<!-- Social Box -->
+			<ul class="social-box">
+				<li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
+				<li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
+				<li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
+				<li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
+				<li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="contact-form">
+	@if ((int)ViewData["update"] == 1)
+	{
+		<div class="alert alert-success" role="alert">
+			votre inscription a bien été prise en compte
+		</div>
+	}
+	@if ((int)ViewData["ok"] == 500)
+	{
+		<div class="alert alert-danger" role="alert">
+			the post was not take into account format error (date or time)
+		</div>
+	}
+	@if ((int)ViewData["ok"] == 502)
+	{
+		<div class="alert alert-danger" role="alert">
+			the post was not take into account format error (int ID or AGE)
+		</div>
+	}
+	<form asp-controller="Client" asp-action="Management" method="POST" method="post">
+		<div class="row clearfix">
+
+			<!-- Form Group -->
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-user-4"></span>
+				<input type="text" name="firstname" placeholder="Firstname" value="@c.Firstname" required>
+			</div>
+			<!-- Form Group -->
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-user-4"></span>
+				<input type="text" name="lastname" placeholder="Lastname" value="@c.Lastname" required>
+			</div>
+			<!-- Form Group -->
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-envelope"></span>
+				<input type="email" name="email" placeholder="E-Mail Address" value="@c.Email" required>
+			</div>
+
+		
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-envelope"></span>
+				<input type="text" name="address" placeholder="Postal address" value="@c.Address" required>
+			</div>
+
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-city"></span>
+				<input type="text" name="city" placeholder="City" value="@c.City" required>
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-age"></span>
+				<input type="text" name="age" placeholder="Age" value="@c.Age" required>
+			</div>
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<span class="icon flaticon-phone"></span>
+				<input type="text" name="phone" placeholder="Phone" value="@c.Phone" required>
+			</div>
+			
+			<!-- Form Group -->
+			<div class="form-group col-lg-6 col-md-6 col-sm-12">
+				<button class="theme-btn btn-style-three" type="submit" name="go" value="update"><span class="txt">Up date</span></button>
+			</div>
+
+		</div>
+	</form>
+	<div class="alert alert-danger" role="alert">
+		<a class="theme-btn submit-btn" b-quchropyuq="" asp-controller="Login" asp-action="ManagementPassword">Update password</a>
+	</div>
+	<div class="alert alert-info " role="alert">
+
+		<a class="theme-btn reply-btn align-items-md-center" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+	</div>
+</div>

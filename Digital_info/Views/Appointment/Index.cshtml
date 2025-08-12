@@ -1,0 +1,181 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+<section class="page-title" style="background-image: url(/assets/images/background/8.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Find your mentor</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Find your mentor</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+
+<form class="form-login" asp-controller="Appointment" asp-action="Index" method="POST">
+ <section class="news-section-threeS">
+	<div class="content-side col-lg-12 col-md-12 col-sm-12">
+		<!-- Course Tag -->
+		<div class="course-tag">
+			<div class="clearfix">
+				<div class="pull-left">
+					<h5>Professional Serveice</h5>
+				</div>
+				<div class="pull-right">
+					<div class="icon flaticon-book-1"></div>
+				</div>
+			</div>
+		</div>
+		<!-- End Course Tag -->
+		<div class="sidebar-page-container left-sidebar">
+			<div class="auto-container">
+				<div class="row clearfix">
+					<div class="sidebar-side col-lg-3 col-md-12 col-sm-12">
+						<aside class="sidebar sticky-top">
+
+								<!-- Mentor Widget -->
+								<div class="mentor-widget">
+									<div class="inner-box">
+
+									@if ((int)ViewData["ok"] == 500)
+									{
+										<div class="alert alert-danger" role="alert">
+											the post was not take into account format error (date or time)
+										</div>
+									}
+									@if ((int)ViewData["ok"] == 502)
+									{
+										<div class="alert alert-danger" role="alert">
+											the post was not take into account format error (int ID)
+										</div>
+									}
+									<li class="col-md-6 col-sm-12"> 
+										<label>Date </label>
+										<input name="date" type="date" class="form-control">
+									</li>
+									<li class="col-md-6 col-sm-12">
+											<input name="time" type="time" class="form-control">
+
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Appointment titre </label>
+										<input name="appointment_titre" type="text" class="form-control">
+									</li>
+									</div>
+								</div>
+								<!-- Mentor Widget -->
+											
+								<!-- Award Widget -->
+
+							</aside>
+						</div>
+						@foreach (ProfessionalViewModel pro in (List<ProfessionalViewModel>)ViewData["servicetype"])
+						{
+							<!-- Course Block -->
+							@if (@pro.Services.Service_details == @pro.Professional.Project_qualification)
+							{
+								<div class="course-block col-lg-4 col-md-6 col-sm-12">
+									<div class="inner-box">
+										<div class="image">
+											<img class="transition-500ms" src="assets/@pro.Professional.Avatar" alt="" />
+										</div>
+										<div class="lower-content">
+											<div class="author-box">
+												<h5>@pro.Professional.Firstname</h5>
+												<div class="designation">@pro.Professional.Lastname</div>
+												<input type="radio" id="idProfessional" name="idProfessional" value="@pro.Professional.Id_professional" />
+											</div>
+											<h5>@pro.Professional.Project_qualification</h5>
+											<ul class="post-info">
+												<li>
+													@*<span class="icon flaticon-book-1"></span>
+													@if (pro.Experience.Projet_carried != null)
+													{
+														@pro.Experience.Projet_carried
+														;
+													}
+												</li>
+												<li>
+													<span class="icon flaticon-trophy"></span>
+													@if (pro.Experience.Satifaction != null)
+													{
+														@pro.Experience.Satifaction
+														;
+													}*@
+
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							}
+							else
+							{
+								<div class="course-block col-lg-4 col-md-6 col-sm-12">
+									<div class="inner-box">
+										<div class="image">
+											<img class="transition-500ms" src="assets/@pro.Services.Images" alt="" />
+										</div>
+										<div class="lower-content">
+											<div class="author-box">
+												<h5>@pro.Professional.Firstname</h5>
+												<div class="designation">@pro.Professional.Lastname</div>
+												<input type="radio" ch id="idProfessional" name="idProfessional" value="@pro.Professional.Id_professional" />
+											</div>
+											<h5>@pro.Professional.Project_qualification</h5>
+											<ul class="post-info">
+												<li>
+												@*	<span class="icon flaticon-book-1"></span>
+													@if (pro.Experience.Projet_carried != null)
+																						{
+														@pro.Experience.Projet_carried;
+													}
+												</li>
+												<li>
+													<span class="icon flaticon-trophy"></span>
+													@if (pro.Experience.Satifaction != null)
+													{
+														@pro.Experience.Satifaction;
+													} 
+														*@							
+													</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+
+							}
+						}
+
+
+					<div class="col-lg-12">
+
+						
+							<button name="go" value="appointment" class="btn btn-inline title color-three ">
+								<i class="fas fa-user-check"></i>
+								<span>Take Appointment</span>
+							</button>
+							
+					</div>
+
+						</div>
+					</div>
+			    </div>		
+			</div>
+	</section>	
+</form>
+<div class="alert alert-info " role="alert">
+
+	<a class="theme-btn reply-btn align-items-md-center" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+</div>
+

@@ -1,0 +1,145 @@
+﻿@{
+}
+<section class="page-title" style="background-image: url(/assets/images/background/10.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Login</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Login</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<div class="space10"></div>
+<!-- MY ACCOUNT -->
+<div class="" style="margin:50px auto;">
+
+	<div class="account-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6">
+					<!-- HTML -->
+					<div id="account-id">
+						<h4 class="account-title"><span class="fa fa-chevron-right"></span>Client</h4>
+						<div class="account-form">
+							@if ((int)ViewData["connexion"] == 1)
+							{
+								<div class="alert alert-danger" role="alert">
+									E-mail ou mot de passe incorrect.
+								</div>
+							}
+							
+							<form class="form-login" asp-controller="Login" asp-action="ClientLog" method="POST">
+								<ul class="form-list row">
+
+									<li class="col-md-12 col-sm-12">
+										<label>Email <em>*</em></label>
+										@if ((int)ViewData["email"] == 300)
+										{
+											<div class="alert alert-danger" role="alert">
+												your email is incorrect
+											</div>
+											<span class="alert-danger"></span>
+										}
+										<input name="email" required type="text" class="form-control" value="leo@gmail.com">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Mot de passe <em>*</em></label>
+										<input name="password" required type="password" class="form-control" value="123">
+									</li>
+
+
+									<button name="go" value="clientLog" class="theme-btn btn-style-three">
+										<i class="fas fa-user-check"></i>
+										<span class="text" >Login </span>
+									</button>
+
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-6">
+					<!-- HTML -->
+					<div id="account-id">
+						<h4 class="account-title"><span class="fa fa-chevron-right"></span> Client</h4>
+						<div class="account-form">
+							@if ((int)ViewData["inscription"] == 1)
+							{
+								<div class="alert alert-success" role="alert">
+									Your registration has been taken into account
+								</div>
+							}
+
+
+							<form class="form-login" asp-controller="Login" asp-action="ClientLog" method="POST">
+								<ul class="form-list row">
+
+									<li class="col-md-12 col-sm-12">
+										<label>Firstname <em>*</em></label>
+										<input name="firstname" required type="text" class="form-control">
+									</li>
+
+									<li class="col-md-12 col-sm-12">
+										<label>Lastname <em>*</em></label>
+										<input name="lastname" required type="text" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Address  <em>*</em></label>
+										<input name="address" required type="text" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>City <em>*</em></label>
+										<input name="city" required type="text" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Phone <em></em></label>
+										<input name="phone" required type="text" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Email <em>*</em></label>
+										@if ((int)ViewData["email"] == 300)
+										{
+											<div class="alert alert-danger" role="alert">
+												your email is incorrect
+											</div>
+											<span class="alert-danger"></span>
+										}
+										<input name="email" required type="email" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Mot de passe <em>*</em></label>
+										<input name="password" required type="password" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Confirmed <em>*</em></label>
+										<input name="passwordComf" required type="password" class="form-control">
+									</li>
+
+								</ul>
+								@if ((int)ViewData["inscription"] == 2)
+								{
+									<div class="alert alert-danger" role="alert">
+										The password must be the same !
+									</div>
+								}
+								<div class="col-lg-12">
+									<button name="go" value="clientSign" class="theme-btn btn-style-three">
+										<i class="fas fa-user-check"></i>
+										<span class="text">Sign in </span>
+									</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</div>

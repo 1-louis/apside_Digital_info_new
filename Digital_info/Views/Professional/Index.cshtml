@@ -1,0 +1,86 @@
+﻿
+@{
+	//Experience exp = (Experience)ViewData["experience"];
+
+}
+
+<section class="page-title" style="background-image: url(/assets/images/background/3.jpg)">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Mentors</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Professional</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<section class="courses-page-section">
+	<div class="auto-container">
+
+		<!-- Order Box -->
+		<div class="order-box">
+			<div class="clearfix">
+				<div class="pull-left">
+					<div class="text">Showing 1-6 of 14 results</div>
+				</div>
+				<div class="pull-right clearfix">
+
+					<!-- Search -->
+					<div class="order-search-box">
+						<form method="post" action="contact.html">
+							<div class="form-group">
+								<input type="search" name="search-field" value="" placeholder="Search here..." required>
+								<button type="submit"><span class="icon fa fa-search"></span></button>
+							</div>
+						</form>
+					</div>
+
+					<!-- Search Dropdown -->
+					<div class="search-dropdown form-group">
+						<select name="country" class="custom-select-box">
+							<option>Select Order</option>
+							<option>Order 01</option>
+							<option>Order 02</option>
+							<option>Order 03</option>
+							<option>Order 04</option>
+						</select>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- End Order Box -->
+
+		<div class="row clearfix">
+			@foreach (ProfessionalViewModel pro in (List<ProfessionalViewModel>)ViewData["experience"])
+			{
+				
+		
+			<!-- Course Block -->
+			<div class="course-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+				<div class="inner-box">
+					<div class="image">
+							<a asp-controller="Client" asp-action="Service_details" asp-route-id="@pro.Services.Id_services"><img class="transition-500ms" src="~/assets/@pro.Professional.Avatar" alt="" /></a>
+					</div>
+					<div class="lower-content">
+							<h5><a asp-controller="Client" asp-action="Service_details" asp-route-id="@pro.Services.Id_services">@pro.Professional.Project_qualification</a></h5>
+							<h3><a asp-controller="Client" asp-action="Service_details" asp-route-id="@pro.Services.Id_services">@pro.Services.Service</a></h3>
+
+						<ul class="post-info">
+								<li><span class="icon flaticon-book-1"></span> @pro.Experience.Early_success </li>
+							<li><span class="icon flaticon-trophy"></span> @pro.Experience.Satifaction</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			}
+
+			
+
+		</div>
+	</div>
+</section>

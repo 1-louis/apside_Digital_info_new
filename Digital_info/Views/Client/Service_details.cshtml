@@ -1,0 +1,286 @@
+﻿@{
+	Professional pro = (Professional)ViewData["servicespro"];
+
+	List<ProfessionalViewModel> ads = (List<ProfessionalViewModel>)ViewData["servicesAll"];
+	int page = (int)ViewData["page"];
+	int nbrOfPages = (int)ViewData["nbrOfPages"];
+	int showstart = 0;
+	int showend = 0;
+	int id = (int)ViewData["pageId"];
+
+}
+<section class="page-title" style="background-image: url(/assets/images/background/6.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat; )" >
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to @pro.Firstname company</div>
+			<h1>News Feeds</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a href="index.html">Home</a></li>
+				<li>Blog</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- End Page Title Section -->
+<div class="sidebar-page-container">
+	<div class="auto-container">
+		<div class="row clearfix">
+
+			<!-- Content Side -->
+			<div class="content-side col-lg-8 col-md-12 col-sm-12">
+				<div class="blog-classic">
+					<!-- News Block Two -->
+					@foreach (ProfessionalViewModel Pro in (List<ProfessionalViewModel>)ViewData["servicesAll"])
+					{
+					<div class="news-block-two">
+						<div class="inner-box">
+							<div class="image">
+									<a href="blog-detail.html"><img class="transition-500ms" src="~/assets/@Pro.Services.Service" width="50px" alt="" /></a>
+							</div>
+							<div class="lower-content">
+								<div class="category">Business</div>
+								<div class="author-box">
+									<div class="box-inner">
+										<div class="author-image">
+											<img src="~/assets/@Pro.Services.Images" width="50px" alt="" />
+										</div>
+									</div>
+								</div>
+								<h3><a href="blog-detail.html">@Pro.Services.Service</a></h3>
+								<div class="text">@Pro.Services.Service_details</div>
+								<ul class="post-meta">
+									<li><span class="icon fa fa-eye"></span>100 Views</li>
+									<li><span class="icon fa fa-comments"></span>30 comments</li>
+									<li><span class="icon fa fa-calendar"></span>24th March 2022</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					}
+					<!-- End News Block Two -->
+					
+					<!-- News Block Three -->
+					<div class="news-block-three">
+						<div class="inner-box">
+							<div class="content">
+								<span class="quote-icon flaticon-quote-3"></span>
+								<h3><a href="blog-detail.html">@pro.Success</a></h3>
+							</div>
+						</div>
+					</div>
+					<!-- End News Block Three -->
+					<!--Styled Pagination-->
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="footer-pagection">
+								<p class="page-info">Affichage de 12 résultats sur @ViewData["countAll"]</p>
+								<ul class="styled-pagination text-center">
+									<li class="page-item">
+									<li class="prev"><a href="/Client/Service_details/@id/?page=@ViewData["prev"]"><span class="fa fa-angle-double-left"></span></a></li>
+
+										
+									</li>
+									@if (nbrOfPages <= 10)
+									{
+										@for (int i = 1; i <= nbrOfPages; i++)
+										{
+											<li class="page-item">
+												@if ((int)ViewData["page"] == i)
+												{
+													<a href="#" class="active">@i </a>
+												}
+												else
+												{
+													<a href="/Client/Service_details/@id/?page=@i" class="page-link">@i </a>
+												}
+											</li>
+										}
+									}
+									else
+									{
+										@if (page <= 5) { showstart = 4; } else { showstart = page - 2; }
+										@if (page < nbrOfPages - 4) { showend = page + 2; } else { showend = nbrOfPages - 2; }
+										@for (int i = 1; i <= 3; i++)
+										{
+											<li class="page-item">
+												@if ((int)ViewData["page"] == i)
+												{
+													<a class="active">@i </a>
+												}
+												else
+												{
+													<a href="/Client/Service_details/@id/?page=@i" class="page-link">@i </a>
+												}
+											</li>
+										}
+
+										@if (page >= 3 && page <= nbrOfPages - 2)
+										{
+											@if (showstart > 4)
+											{
+												<li class="page-item">...</li>
+											}
+
+
+											@for (int i = showstart; i <= showend; i++)
+											{
+												<li class="page-item">
+													@if ((int)ViewData["page"] == i)
+													{
+														<a class="active">@i </a>
+													}
+													else
+													{
+
+														<a href="/Client/Service_details/@id/?page=@i" class="page-link">@i </a>
+													}
+												</li>
+											}
+										}
+										@if (page + 2 < nbrOfPages - 2 || page > nbrOfPages - 2)
+										{
+											<li class="page-item">...</li>
+										}
+										@for (int i = nbrOfPages - 1; i <= nbrOfPages; i++)
+										{
+											<li class="page-item">
+												@if ((int)ViewData["page"] == i)
+												{
+												<li><a href="#" class="active">@i</a></li>
+
+
+												}
+												else
+												{
+												<li><a href="/Client/Service_details/@id/?page=@i" >@i</a></li>
+
+												}
+											</li>
+										}
+
+
+
+									}
+									<li class="next"><a href="/Client/Service_details/@id/?page=@ViewData["next"]"><span class="fa fa-angle-double-right"></span></a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+@*					<ul class="styled-pagination text-center">
+						<li class="prev"><a href="#"><span class="fa fa-angle-double-left"></span></a></li>
+						<li><a href="#">1</a></li>
+						<li><a href="#" class="active">2</a></li>
+						<li><a href="#">3</a></li>
+						<li class="next"><a href="#"><span class="fa fa-angle-double-right"></span></a></li>
+					</ul>*@
+					<!--End Styled Pagination-->
+
+				</div>
+			</div>
+
+			<!-- Sidebar Side -->
+			<div class="sidebar-side col-lg-4 col-md-12 col-sm-12">
+				<aside class="sidebar sticky-top">
+
+					<!-- Sidebar Widget / About Widget -->
+					<div class="sidebar-widget-two about-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title-two">
+								<h5>About Me</h5>
+							</div>
+							<div class="image">
+								<img src="~/assets/@pro.Avatar" alt="" />
+							</div>
+							<div class="lower-content">
+								
+								<h6>@pro.Firstname - @pro.Lastname</h6>
+								<p style="color:#777;">
+									@pro.Project_qualification
+								</p>
+								<div class="text">@pro.Project_datail</div>
+								<!-- Social Box -->
+								<ul class="social-box">
+									<li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
+									<li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
+									<li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
+									<li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
+									<li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- End Sidebar Widget / About Widget -->
+					<!-- Sidebar Widget / Search Widget -->
+					<div class="sidebar-widget-two about-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+						@*	<div class="sidebar-title-two">
+								<h5>Search Here</h5>
+							</div>
+
+							<!-- Search -->
+							<div class="sidebar-widget search-box">
+								<form method="post" action="contact.html">
+									<div class="form-group">
+										<input type="search" name="search-field" value="" placeholder="Search your keyword..." required>
+										<button type="submit"><span class="icon fa fa-search"></span></button>
+									</div>
+								</form>
+							</div>*@
+
+						</div>
+					</div>
+					<!-- End Sidebar Widget / Search Widget -->
+				
+					<!-- Sidebar Widget / Category Widget -->
+					<div class="sidebar-widget-two category-widget-two">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title-two">
+								<h5>Categories</h5>
+							</div>
+							@foreach (Services Pro in (List<Services>)ViewData["services"])
+							{
+							<ul class="cat-list-two">
+								<li><a href="#">@Pro.Service<span>-</span></a></li>
+								
+							</ul>
+							}
+						</div>
+					</div>
+					<!-- End Sidebar Widget / Category Widget -->
+					<!-- Sidebar Widget / Instagram Widget -->
+					<div class="sidebar-widget-two instagram-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title-two">
+								<h5></h5>
+							</div>
+						
+						</div>
+					</div>
+					<!-- End Sidebar Widget / Instagram Widget -->
+					<!-- Sidebar Widget / Add Widget -->
+					<div class="sidebar-widget-two add-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title-two">
+								<h5>Sponsor Adds</h5>
+							</div>
+							<div class="add-image">
+								<img src="assets/images/resource/add.jpg" alt="" />
+								<div class="add-size">270x240</div>
+							</div>
+						</div>
+					</div>
+
+				</aside>
+			</div>
+
+		</div>
+	</div>
+</div>

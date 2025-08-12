@@ -1,0 +1,70 @@
+﻿
+
+<!-- BREADCRUMBS -->
+<div class="bcrumbs">
+	<div class="container">
+		<ul>
+			<li><a href="#">Accueil</a></li>
+			<li>Connexion / Inscription</li>
+		</ul>
+	</div>
+</div>
+<div class="space10"></div>
+
+<!-- MY ACCOUNT -->
+<div class="account-wrap">
+	<div class="container">
+		<div class="row">
+
+			
+			<div class="col-sm-12 col-md-12">
+				<!-- HTML -->
+				<div id="account-id">
+					<h4 class="account-title"><span class="fa fa-chevron-right"></span>Connexion</h4>
+					<div class="account-form">
+						@if ((int)ViewData["connexion"] == 1)
+						{
+							<div class="alert alert-danger" role="alert">
+								E-mail ou mot de passe incorrect.
+							</div>
+						}
+						@if ((int)ViewData["ok"] == 500)
+						{
+							<div class="alert alert-danger" role="alert">
+								password is incorrecte formate (number , caracter et uppercase character  )
+							</div>
+						}
+						@if ((int)ViewData["ok"] == 502)
+						{
+							<div class="alert alert-danger" role="alert">
+								email is incorrecte formate 
+							</div>
+						}
+						<form class="form-login" asp-controller="Admin3060" asp-action="Index" method="POST">
+							<ul class="form-list row">
+
+								<li class="col-md-12 col-sm-12">
+									<label>Email <em>*</em></label>
+									<input name="email" required type="text" class="form-control">
+								</li>
+								<li class="col-md-12 col-sm-12">
+									<label>Mot de passe <em>*</em></label>
+									<input name="password" required type="password" class="form-control">
+								</li>
+
+
+								<button name="go" style="background-color:black; margin:0 auto; text-align:center;" value="connexion" class="btn btn-inline">
+									<i class="fas fa-user-check"></i>
+									<span>Connexion </span>
+								</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class="clearfix space20"></div>
+

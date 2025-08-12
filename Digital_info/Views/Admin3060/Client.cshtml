@@ -1,0 +1,109 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+   
+
+                    <!-- Start Content-->
+                    <div class="container-fluid">
+
+                        <!-- start page title -->
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="page-title-box">
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Admin</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Gestion des Client</a></li>
+                                            <li class="breadcrumb-item active">Liste des Client</li>
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Clients</h4>
+                                </div>
+                            </div>
+                        </div>     
+                        <!-- end page title -->
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card-box">
+                                    <h4 class="header-title">Liste de Clients</h4>
+
+                                    <table id="datatable" class="table table-bordered  nowrap">
+                                         <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                        <th>Firstname</th>
+                                        <th>Lastname</th>
+                                        <th>Email</th>
+                                        <th>Age</th>
+                                        <th>Adresse</th>
+                                        <th>City</th>
+                                                <th>Options</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                @foreach (Client c in (List<Client>)ViewData["clients"])
+                                {
+                                            <tr>
+                                                       <td>@c.Id_client</td>
+                                                        <td>@c.Firstname</td>
+                                                        <td>@c.Lastname </td>
+                                                        <td>@c.Email</td>
+                                                        <td>@c.Age</td>
+                                                        <td>@c.Address</td>
+                                                        <td>@c.City</td>
+                                                <td>
+                                                        <a asp-controller="Admin3060" asp-action="ClientEdit" asp-route-id="@c.Id_client" class="btn btn-primary waves-effect waves-light"> <i class=" mdi mdi-grease-pencil"></i> <span>Modifier</span> </a>
+                                                        <a asp-controller="Admin3060" asp-action="Client" asp-route-idtodelete="@c.Id_client" onclick="return confirm('Are you sure?')"  class="btn btn-danger waves-effect waves-light width-md"><i class="mdi mdi-delete"></i> <span>Suprimer</span> </a>
+                                                </td>
+                                            </tr>
+                                }
+
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end card-box -->
+                            </div> <!-- end col -->
+                        </div> <!-- end row -->
+
+
+
+
+
+            @section Scripts{
+            <!-- datatable js -->
+            <script src="assets/libs/datatables/jquery.dataTables.min.js"></script>
+            <script src="assets/libs/datatables/dataTables.bootstrap4.min.js"></script>
+            <script src="assets/libs/datatables/dataTables.responsive.min.js"></script>
+            <script src="assets/libs/datatables/responsive.bootstrap4.min.js"></script>
+
+            <script src="assets/libs/datatables/dataTables.buttons.min.js"></script>
+            <script src="assets/libs/datatables/buttons.bootstrap4.min.js"></script>
+            <script src="assets/libs/datatables/buttons.html5.min.js"></script>
+            <script src="assets/libs/datatables/buttons.flash.min.js"></script>
+            <script src="assets/libs/datatables/buttons.print.min.js"></script>
+
+            <script src="assets/libs/datatables/dataTables.keyTable.min.js"></script>
+            <script src="assets/libs/datatables/dataTables.select.min.js"></script>
+
+            <!-- Datatables init -->
+            <script src="assets/js/pages/datatables.init.js"></script>
+
+            <script type="text/javascript">
+
+                $(document).ready(function () {
+
+                    $('#datatable').dataTable({
+                        "language": {
+                            "url": "https://cdn.datatables.net/plug-ins/1.10.21/i18n/French.json"
+                        },
+                        "destroy": true
+                    });
+                });
+
+
+
+            </script>
+        }

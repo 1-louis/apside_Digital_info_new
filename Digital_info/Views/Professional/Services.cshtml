@@ -1,0 +1,416 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	List<ProfessionalViewModel> ads = (List<ProfessionalViewModel>)ViewData["servicesAll"];
+	
+	
+		int page = (int)ViewData["page"];
+		int nbrOfPages = (int)ViewData["nbrOfPages"];
+		int showstart = 0;
+		int showend = 0;
+		int id = (int)ViewData["pageId"];
+		Professional proS = (Professional)ViewData["servicespro"];
+	
+
+
+}
+<section class="page-title" style="background-image: url(/assets/images/background/8.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to your company</div>
+			<h1>Mentors</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Professional Profil</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+<div class="sticky-header">
+	<div class="auto-container clearfix">
+		<!--Logo-->
+		<div class="logo pull-left">
+			<a href="index.html" title=""><img src="assets/images/logo-small.png" alt="" title=""></a>
+		</div>
+		<!--Right Col-->
+		<div class="pull-right">
+
+			<!-- Main Menu -->
+			<nav class="main-menu">
+				<!--Keep This Empty / Menu will come through Javascript-->
+			</nav>
+			<!-- Main Menu End-->
+			<!-- Mobile Navigation Toggler -->
+			<div class="mobile-nav-toggler"><span class="icon flaticon-menu-1"></span></div>
+
+		</div>
+	</div>
+</div>
+<div class="xs-sidebar-group info-group">
+	<div class="xs-overlay xs-bg-black"></div>
+	<div class="xs-sidebar-widget">
+		<div class="sidebar-widget-container">
+			
+			<div class="sidebar-textwidget">
+
+				<!-- Sidebar Info Content -->
+				<div class="sidebar-info-contents">
+					<div class="content-inner">
+						<div class="logo">
+							<a href="index.html"><img src="~/assets/images/logo.png" alt="" /></a>
+						</div>
+						<div class="content-box">
+							<h4>About Us</h4>
+							<p class="text">I am glad that you have made it here to send a distress signal, and inform the Senate that all on board killed. Dantooine. I’m not going to Alderaan. I really got to go. But that to me.</p>
+							<a href="contact.html" class="theme-btn btn-style-one"><span class="txt">Consultation</span></a>
+						</div>
+						
+						<!-- Social Box -->
+						<ul class="social-box">
+							<li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
+							<li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
+							<li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
+							<li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Sidebar Page Container -->
+<section class="sidebar-page-container">
+	<div class="container-fluid">
+		<div class="row clearfix">
+
+			<!-- Content Side -->
+			<div class="content-side col-xl-9 col-lg-6 col-md-6 col-sm-12">
+				<div class="service-detail">
+					<ul class="accordion-box style-three">
+
+						<!-- Block -->
+						<li class="accordion block">
+							<div class="acc-btn"><div class="icon-outer"><span class="icon icon-plus fa fa-plus"></span> <span class="icon icon-minus fa fa-minus"></span></div><strong>01.</strong><h4>Post Services</h4></div>
+							<div class="acc-content">
+								<div class="">
+									<div class="text">
+										<div class="comment-form">
+											<div class="group-title"></div>
+
+											<!--Comment Form-->
+											<form asp-controller="Professional" asp-action="Services" method="POST" enctype="multipart/form-data">
+
+
+												<div class="form-group">
+													<span class="icon fa fa-pencil"></span>
+													<input type="text" name="service" placeholder="Type your service...." required>
+												</div>
+												<div class="form-group">
+													<span class="icon fa fa-pencil"></span>
+													<textarea class="service_details" name="service_details" placeholder="Type your service details...."></textarea>
+												</div>
+
+												<div class="form-group">
+													<span class="icon fa fa-file"></span>
+													<input type="file" name="brochure" placeholder="Type your brochure...." required>
+												</div>
+
+												<div class="form-group">
+													<span class="icon fa fa-image"></span>
+													<input type="file" name="images" placeholder="Type your images...." required>
+												</div>
+
+
+												<div class="form-group">
+													<button class="theme-btn btn-style-five" type="submit" name="submit" value="service"><span class="txt"><i class="fa fa-comment"></i>Post Service</span></button>
+												</div>
+
+											</form>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</li>
+
+						<!-- Block -->
+
+
+					</ul>
+					
+
+				
+					<div class="inner-box">
+						@foreach (ProfessionalViewModel Pro in (List<ProfessionalViewModel>)ViewData["servicesAll"])
+					{
+						<div class="image">
+								<img style="position: relative;width: 100%;display: block;margin: 0 auto;" src="~/assets/@Pro.Services.Images" alt="" />
+						</div>
+						<h4>@Pro.Services.Service</h4>
+							<p> @Pro.Services.Service_details</p>
+							
+							
+								<div class="row ">
+									<div class="form-group col-lg-6 col-md-6 col-sm-12">
+									<a asp-controller="Professional" asp-action="EditServices" asp-route-id="@Pro.Services.Id_services" class="theme-btn btn-style-three"><span class="txt">Update</span></a>
+									</div>
+									<div class="form-group col-lg-6 col-md-6 col-sm-12">
+									<a asp-controller="Professional" asp-action="Services" asp-route-idtodelete="@Pro.Services.Id_services" onclick="return confirm('Are you sure?')" class="theme-btn btn-style-three"><span class="txt">DELETE</span></a>
+									</div>
+								</div>
+							
+					}
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="footer-pagection">
+									<p class="page-info">Affichage de 12 résultats sur @ViewData["countAll"]</p>
+									<ul class="styled-pagination text-center">
+										<li class="page-item">
+										<li class="prev"><a href="/Professional/Services/@id/?page=@ViewData["prev"]"><span class="fa fa-angle-double-left"></span></a></li>
+
+
+										</li>
+										@if (nbrOfPages <= 10)
+										{
+											@for (int i = 1; i <= nbrOfPages; i++)
+											{
+												<li class="page-item">
+													@if ((int)ViewData["page"] == i)
+													{
+														<a href="#" class="active">@i </a>
+													}
+													else
+													{
+														<a href="/Professional/Services/@id/?page=@i" class="page-link">@i </a>
+													}
+												</li>
+											}
+										}
+										else
+										{
+											@if (page <= 5) { showstart = 4; } else { showstart = page - 2; }
+											@if (page < nbrOfPages - 4) { showend = page + 2; } else { showend = nbrOfPages - 2; }
+											@for (int i = 1; i <= 3; i++)
+											{
+												<li class="page-item">
+													@if ((int)ViewData["page"] == i)
+													{
+														<a class="active">@i </a>
+													}
+													else
+													{
+														<a href="/Professional/Services/@id/?page=@i" class="page-link">@i </a>
+													}
+												</li>
+											}
+
+											@if (page >= 3 && page <= nbrOfPages - 2)
+											{
+												@if (showstart > 4)
+												{
+													<li class="page-item">...</li>
+												}
+
+
+												@for (int i = showstart; i <= showend; i++)
+												{
+													<li class="page-item">
+														@if ((int)ViewData["page"] == i)
+														{
+															<a class="active">@i </a>
+														}
+														else
+														{
+
+															<a href="/Professional/Services/@id/?page=@i" class="page-link">@i </a>
+														}
+													</li>
+												}
+											}
+											@if (page + 2 < nbrOfPages - 2 || page > nbrOfPages - 2)
+											{
+												<li class="page-item">...</li>
+											}
+											@for (int i = nbrOfPages - 1; i <= nbrOfPages; i++)
+											{
+												<li class="page-item">
+													@if ((int)ViewData["page"] == i)
+													{
+													<li><a href="#" class="active">@i</a></li>
+
+
+													}
+													else
+													{
+													<li><a href="/Professional/Services/@id/?page=@i">@i</a></li>
+
+													}
+												</li>
+											}
+
+
+
+										}
+										<li class="next"><a href="/Professional/Services/@id/?page=@ViewData["next"]"><span class="fa fa-angle-double-right"></span></a></li>
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h6>What We Do</h6>
+							<div class="feature-outer">
+								<div class="row clearfix">
+
+									<!-- Feature Block Two -->
+									<div class="feature-block-two col-lg-6 col-md-6 col-sm-12">
+										<div class="inner-box">
+											<div class="content">
+												<div class="icon flaticon-search-2"></div>
+												<h5>Research & Analyze</h5>
+												<div class="feature-text">Who are so beguiled and demo realized by the charms of pleasure.</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Feature Block Two -->
+									<div class="feature-block-two col-lg-6 col-md-6 col-sm-12">
+										<div class="inner-box">
+											<div class="content">
+												<div class="icon flaticon-magnifier"></div>
+												<h5>Sketch & Optimizing</h5>
+												<div class="feature-text">Who are so beguiled and demo realized by the charms of pleasure.</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<p>An IT consultant handles anything from computer repairs to management and maintenance of large networks. IT consultants can generally be categorized into three specialties: Project management. Maintenance and repair. An IT consultant is an experienced individual who provides expert advice for a fee. Such an individual may work as an independent contractor, in which case he or she may be referred to as an independent consultant. ... IT consultants typically charge clients an hourly rate for their services.</p>
+
+							<!-- Service Gallery -->
+							<div class="service-gallery">
+								<div class="row clearfix">
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-12">
+										<div class="image">
+											<a class="lightbox-image" href="assets/images/resource/service-9.jpg"><img src="assets/images/resource/service-9.jpg" alt="" /></a>
+										</div>
+									</div>
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-12">
+										<div class="image">
+											<a class="lightbox-image" href="assets/images/resource/service-9.jpg"><img src="assets/images/resource/service-10.jpg" alt="" /></a>
+										</div>
+									</div>
+									<!-- Column -->
+									<div class="column col-lg-4 col-md-4 col-sm-12">
+										<div class="image">
+											<a class="lightbox-image" href="assets/images/resource/service-9.jpg"><img src="assets/images/resource/service-11.jpg" alt="" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sidebar Side -->
+			<div class="sidebar-side col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<aside class="sidebar sticky-top">
+					<div class="sidebar-widget-two about-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title-two">
+								<h5>About Me</h5>
+							</div>
+							
+							<div class="image">
+								<img src="~/assets/@proS.Avatar" alt="" />
+							</div>
+							<div class="lower-content">
+									<h6>@proS.Firstname / @proS.Lastname</h6>
+									<div class="text">@proS.Project_qualification</div>
+
+								<div class="text">@proS.Project_datail</div>
+								<!-- Social Box -->
+								<ul class="social-box">
+									<li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
+									<li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
+									<li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
+									<li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
+									<li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+								</ul>
+							</div>
+							<div class="image">
+								<div class="row clearfix">
+									<!-- Form Group -->
+									<div class="form-group col-lg-12 col-md-12 col-sm-6">
+										<li><a class="theme-btn btn-style-ten" asp-controller="Professional" asp-action="Management"> <span class="txt"> Management</span></a></li>
+									</div>
+								</div>
+							</div>
+
+							<a class="theme-btn live-preview"> </a>
+
+						</div>
+					</div>
+					<!-- Sidebar Widget -->
+					<div class="sidebar-widget service-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title">
+								<h6>Services List</h6>
+							</div>
+							<ul class="service-list">
+								@foreach (ProfessionalViewModel pro in (List<ProfessionalViewModel>)ViewData["services"])
+								{
+									<li>
+										<a asp-controller="Client" asp-action="Service_details" asp-route-id="@pro.Services.Id_services">
+											<span>
+												@pro.Services.Service
+											</span>
+										</a>
+									</li>
+
+								}
+								
+							</ul>
+						</div>
+					</div>
+
+					<!-- Sidebar Widget -->
+					<div class="sidebar-widget broucher-widget">
+						<div class="widget-content">
+							<!-- Sidebar Title -->
+							<div class="sidebar-title">
+								<h6>Brochure</h6>
+							</div>
+							<ul class="broucher-list">
+								@foreach (ProfessionalViewModel pro in (List<ProfessionalViewModel>)ViewData["services"])
+								{
+									<li><a href="~/assets/@pro.Services.Brochure">@pro.Services.Brochure</a></li>
+								}
+							</ul>
+						</div>
+					</div>
+
+					<!-- Sidebar Widget -->
+					
+
+				</aside>
+			</div>
+
+		</div>
+	</div>
+</section>
+

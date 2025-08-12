@@ -1,0 +1,12 @@
+﻿@{
+    var controller = Convert.ToString(Context.Request.HttpContext.Request.RouteValues["Controller"]);
+
+    string cLayout = "_Layout";
+
+    if (controller == "Admin3060")
+    {
+        cLayout = "_LayoutAdmin";
+    }
+
+    Layout = cLayout;
+}

@@ -1,0 +1,160 @@
+﻿@{
+}
+<section class="page-title" style="background-image: url(/assets/images/background/7.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Logn In</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Sign in</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- BREADCRUMBS -->
+<div class="bcrumbs">
+	<div class="container">
+		<ul>
+			<li></li>
+		</ul>
+	</div>
+</div>
+<div class="space10"></div>
+<div class="" style="margin:50px auto;">
+
+<!-- MY ACCOUNT -->
+	<div class="account-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-md-6">
+					<!-- HTML -->
+					<div id="account-id">
+						<h4 class="account-title"><span class="fa fa-chevron-right"></span>Professional</h4>
+						<div class="account-form">
+							@if ((int)ViewData["connexion"] == 2)
+							{
+								<div class="alert alert-danger" role="alert">
+									E-mail ou mot de passe incorrect.
+								</div>
+							}
+							<form class="form-login" asp-controller="Login" asp-action="ProfLog" method="POST">
+								<ul class="form-list row">
+									<li class="col-md-12 col-sm-12">
+										<label>Siret </label>
+										@if ((int)ViewData["siret"] == 201)
+										{
+											<div class="alert alert-danger" role="alert">
+												your siret number is incorrect
+											</div>
+											<span class="alert-danger"></span>
+										}
+										<input name="siret"  type="number" maxlength="14" value="12345678" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Email <em>*</em></label>
+										@if ((int)ViewData["email"] == 301)
+										{
+											<div class="alert alert-danger" role="alert">
+												your email is incorrect
+											</div>
+											<span class="alert-danger"></span>
+										}
+										<input name="email" required type="text"  class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Mot de passe <em>*</em></label>
+										<input name="password" required type="password"  value="123" class="form-control">
+									</li>
+
+
+									<button name="go" value="professionalLogin" class="theme-btn btn-style-three">
+										<i class="fas fa-user-check"></i>
+										<span class="text" >Login </span>
+									</button>
+
+							</form>
+						</div>
+					</div>
+				</div>
+				
+			
+				<div class="col-sm-6 col-md-6">
+					<!-- HTML -->
+					<div id="account-id">
+						<h4 class="account-title"><span class="fa fa-chevron-right"></span>Professional</h4>
+						<div class="account-form">
+							@if ((int)ViewData["inscription"] == 1)
+							{
+							<div class="alert alert-success" role="alert">
+									Your registration has been taken into account
+								</div>
+							}
+
+							<form class="form-login" asp-controller="Login" asp-action="ProfLog" method="POST">
+								<ul class="form-list row">
+									<li class="col-md-12 col-sm-12">
+										<label>Siret <em>*</em>  </label>
+										@if ((int)ViewData["siret"] == 202)
+										{
+											<div class="alert alert-danger" role="alert">
+												your sirect number is incorrect
+											</div>
+											<span class="alert-danger"></span>
+										}
+										<input name="siret" required type="number" maxlength="14" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Firstname <em>*</em></label>
+										<input name="firstname" required type="text" class="form-control">
+									</li>
+
+									<li class="col-md-12 col-sm-12">
+										<label>Lastname <em>*</em></label>
+										<input name="lastname" required type="text" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Email <em>*</em></label>
+										@if ((int)ViewData["email"] == 301)
+										{
+											<div class="alert alert-danger" role="alert">
+												your email is incorrect
+											</div>
+											<span class="alert-danger"></span>
+										}
+										<input name="email" required type="email" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Mot de passe <em>*</em></label>
+										<input name="password" required type="password" class="form-control">
+									</li>
+									<li class="col-md-12 col-sm-12">
+										<label>Mot de passe <em>*</em></label>
+										<input name="passwordComf" required type="password" class="form-control">
+									</li>
+								
+								</ul>
+								@if ((int)ViewData["inscription"] == 2)
+								{
+								<div class="alert alert-danger" role="alert">
+								le mot de passe doivent être la même
+								</div>
+								}
+								<div class="col-lg-12">
+									<button name="go" value="professionalSign" class="theme-btn btn-style-three">
+										<i class="fas fa-user-check"></i>
+										<span class="text">Sign in </span>
+									</button>
+								</div>
+
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clearfix space20"></div>

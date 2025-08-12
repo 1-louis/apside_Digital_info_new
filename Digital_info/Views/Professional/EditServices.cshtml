@@ -1,0 +1,93 @@
+﻿
+@{
+	Services s = ViewData["service"] as Services;
+
+}
+<section class="page-title" style="background-image: url(/assets/images/background/1.jpg)">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Consulting expertise </h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Edit service</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="content">
+	<div class="row clearfix">
+		<div class="form-group col-lg-12 col-md-12 col-sm-12">
+			<div class="text">
+				<div class="comment-form">
+					<div class="group-title"></div>
+					@if ((int)ViewData["ok"] == 500)
+					{
+						<div class="alert alert-danger" role="alert">
+							your registration has not been taken into account incorrect format
+						</div>
+					}
+					<!--Comment Form-->
+					<form asp-controller="Professional" asp-action="EditServices" method="POST" enctype="multipart/form-data">
+
+
+						<div class="form-group">
+							<span class="icon fa fa-pencil"></span>
+							<input type="text" value="
+							@if (@s.Service.ToString() ==null)
+							{	}else {
+									@s.Service
+								}
+							" name="service" placeholder="Type your service...." required>
+						</div>
+						<div class="form-group">
+							<span class="icon fa fa-pencil"></span>
+							<textarea class="service_details" name="service_details" placeholder="Type your service details....">
+								@if (@s.Service_details.ToString() == null)
+								{
+
+								}
+								else
+								{
+									@s.Service_details
+								}
+							</textarea>
+						</div>
+
+						<div class="form-group">
+							<span class="icon fa fa-file"></span>
+							<input type="file" value="
+							@if (@s.Brochure.ToString() ==null)
+							{
+
+							}else {
+								@s.Brochure
+								}
+							" name="brochure" placeholder="Type your brochure....">
+						</div>
+
+						<div class="form-group">
+							<span class="icon fa fa-image"></span>
+							<input type="file" value="
+							@if (@s.Images.ToString() ==null)
+							{
+							}else {
+							@s.Images
+								}
+							" name="images" placeholder="Type your images...." required>
+						</div>
+
+
+						<div class="form-group">
+							<button class="theme-btn btn-style-five" type="submit" name="submit" value="updateService"><span class="txt"><i class="fa fa-comment"></i>Post Service</span></button>
+						</div>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,104 @@
+﻿@{
+}
+
+<section class="page-title" style="background-image: url(/assets/images/background/10.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Consulting expertise </h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Client Profil</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="container-fluid">
+	<section class="services-section">
+		<div class="auto-container">
+			<div class="sec-title">
+				<div class="title color-two">Services</div>
+				<h2>Explore How can I Help You</h2>
+			</div>
+			<div>
+
+				<div class="services-carousel owl-carousel owl-theme">
+
+					<!-- Service Block -->
+					@foreach( Services  ser in (List<Services>)ViewData["services"]  )
+					{
+					<div class="service-block">
+						<div class="inner-box">
+							<div class="image">
+									<a asp-controller="Client" asp-action="Service_details" asp-route-id="@ser.Id_services"><img class="transition-500ms" src="~/assets/@ser.Images" alt="" /></a>
+							</div>
+							<div class="lower-content">
+								<div class="lessons"></div>
+								<div class="lower-box">
+										<h4><a asp-controller="Client" asp-action="Service_details" asp-route-id="@ser.Id_services">@ser.Service</a></h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					}
+					
+
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+<section class="process-section" style="background-image: url(assets/images/background/pattern-2.png)">
+	<div class="auto-container">
+		<!-- Sec Title -->
+		<div class="sec-title light">
+			<div class="title">Process</div>
+			<h2>Our Solution Process</h2>
+		</div>
+		<div class="row clearfix">
+
+			<!-- Process Block -->
+			<div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="inner-box transition-300ms">
+					<div class="icon transition-500ms flaticon-planning"></div>
+					<div class="step">step 01</div>
+					<h4><a href="service-detail.html">Plan For Work</a></h4>
+					<div class="text">Through plans, you break down a process into small and identify the things you accomplish..</div>
+				</div>
+			</div>
+
+			<!-- Process Block -->
+			<div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="inner-box transition-300ms">
+					<div class="icon transition-500ms flaticon-implement"></div>
+					<div class="step">step 02</div>
+					<h4><a href="service-detail.html">Implementation</a></h4>
+					<div class="text">Thanks to this upstream analysis, you know what your priorities are for your project..</div>
+				</div>
+			</div>
+
+			<!-- Process Block -->
+			<div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="inner-box transition-300ms">
+					<div class="icon transition-500ms flaticon-friend"></div>
+					<div class="step">step 03</div>
+					<h4><a href="service-detail.html">Consultancy</a></h4>
+					<div class="text">You make an appointment with a qualified person who can help you as soon as possible..</div>
+				</div>
+			</div>
+
+			<!-- Process Block -->
+			<div class="process-block col-xl-3 col-lg-6 col-md-6 col-sm-12">
+				<div class="inner-box transition-300ms">
+					<div class="icon transition-500ms flaticon-finish-line"></div>
+					<div class="step">step 04</div>
+					<h4><a href="service-detail.html">Project Closure</a></h4>
+					<div class="text">You reach your objects step by step.</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>

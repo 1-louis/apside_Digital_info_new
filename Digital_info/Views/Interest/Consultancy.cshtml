@@ -1,0 +1,123 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Interest i = ViewData["interest"] as Interest;
+
+	Client c = ViewData["client"] as Client;
+}
+<section class="page-title" style="background-image: url(/assets/images/background/4.jpg)">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Mentors</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Mentors</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- End Page Title Section -->
+<div class="auto-container" style="margin-top:20px;">
+	<form class="form-login" asp-controller="Interest" asp-action="Consultancy" method="POST">
+		<ul class="form-list row">
+			@if ((int)ViewData["ok"] == 1)
+			{
+				<div class="alert alert-success" role="alert">
+					The data has been added
+				</div>
+			}
+			@if ((int)ViewData["ok"] == 500)
+			{
+				<div class="alert alert-danger" role="alert">
+					the post was not take into account format error (date or time)
+				</div>
+			}
+			@if ((int)ViewData["ok"] == 502)
+			{
+				<div class="alert alert-danger" role="alert">
+					the post was not take into account format error (int ID / person or price)
+				</div>
+			}
+
+
+			<select name="type_project" maxlength="255" class="form-control">
+				<option value="null">Select your projet type</option>
+
+				@foreach (Services ser in (List<Services>)ViewData["services"])
+				{
+					<option value="@ser.Service"> @ser.Service </option>
+				}
+				<option value="Ather">other</option>
+			</select>
+
+
+			<li class="col-md-12 col-sm-12">
+				<label>Nomber person <em>*</em></label>
+				<input name="nbr_person" required type="number" value="
+					@if (@i.Nbr_peson != 0)
+					{
+						@i.Nbr_peson
+					} else {}" class="form-control">
+			</li>
+
+			<li class="col-md-12 col-sm-12">
+				<label>Estimates I have for poject<em>*</em></label>
+				<input name="price" required type="number" value="
+				@if (@i.Price !=0)
+					{
+						@i.Price
+					} else {}" class="form-control">
+			</li>
+
+			<li class="col-md-12 col-sm-12">
+				<label>Description  <em>*</em></label>
+				<textarea style="border:#777 solid 0.5px;" name="description" rows="10" cols="150" maxlength="19000">
+					@if (@i.Description != "")
+					{
+						@i.Description
+					}
+					else { }</textarea>
+			</li>
+
+		</ul>
+		@if ((int)ViewData["ok"] == 500)
+		{
+			<div class="alert alert-danger" role="alert">
+				the information is incorrect
+			</div>
+
+
+		}
+
+
+		@if ((int)ViewData["update"] == 1)
+		{
+			<div class="col-lg-12">
+				<button name="go"  value="update" class="btn btn-inline title color-three ">
+					<i class="fas fa-user-check"></i>
+					<span>Update my request </span>
+				</button>
+			</div>
+
+
+		}
+		else
+		{
+			<div class="col-lg-12">
+				<button name="go" value="interest" class="btn btn-inline title color-three ">
+					<i class="fas fa-user-check"></i>
+					<span>Add my request </span>
+				</button>
+			</div>
+		}
+		
+	</form>
+</div>
+<div class="alert alert-info " role="alert">
+
+	<a class="theme-btn reply-btn align-items-md-center" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+</div>

@@ -1,0 +1,124 @@
+﻿
+@{
+	Professional p = ViewData["professional"] as Professional;
+}
+<section class="page-title" style="background-image: url(/assets/images/background/1.jpg)">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Consulting expertise </h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Management profil</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<div class="sidebar-widget-two about-widget">
+	<div class="widget-content">
+		<!-- Sidebar Title -->
+		<div class="sidebar-title-two">
+			<h5>About Me</h5>
+		</div>
+		<div class="image">
+			<div class="row clearfix">
+				<!-- Form Group -->
+				<div class="form-group col-lg-12 col-md-12 col-sm-6">
+					<a class="theme-btn btn-style-ten" b-quchropyuq="" asp-controller="Login" asp-action="ManagementPassword"> <span class="txt">Update password </span></a>
+				</div>
+			</div>
+@*			<img src="~/assets/images/resource/about-widget.jpg" alt="" />
+*@		</div>
+		<div class="lower-content">
+			<h6>@p.Firstname | @p.Lastname</h6>
+			<div class="text">@p.Email</div>
+			<!-- Social Box -->
+			<ul class="social-box">
+				<li><a href="https://www.facebook.com/" class="fa fa-facebook-f"></a></li>
+				<li><a href="https://www.twitter.com/" class="fa fa-twitter"></a></li>
+				<li><a href="https://www.behance.com/" class="fa fa-behance"></a></li>
+				<li><a href="https://www.linkedin.com/" class="fa fa-linkedin"></a></li>
+				<li><a href="https://youtube.com/" class="fa fa-youtube-play"></a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div class="row clearfix">
+		<div class="form-group col-lg-12 col-md-12 col-sm-12">
+			<div class="contact-form">
+					@if ((int)ViewData["update"] == 1)
+					{
+						<div class="alert alert-success" role="alert">
+							votre inscription a bien été prise en compte
+						</div>
+					}
+
+
+				<form asp-controller="Professional" asp-action="Management" method="POST" enctype="multipart/form-data">
+					<div class="row clearfix">
+
+						<!-- Form Group -->
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-user-4"></span>
+							<input type="text" name="firstname" placeholder="Firstname" value="@p.Firstname" required>
+						</div>
+						<!-- Form Group -->
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-user-4"></span>
+							<input type="text" name="lastname" placeholder="Lastname" value="@p.Lastname" required>
+						</div>
+						<!-- Form Group -->
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-envelope"></span>
+							<input type="email" name="email" placeholder="E-Mail Address" value="@p.Email" required>
+						</div>
+
+			
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-file"></span>
+							<input type="text" name="project_qualification" placeholder="Postal project qualification" value="@p.Project_qualification" required>
+						</div>
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-file"></span>
+							<textarea class="project_datail" name="project_datail" placeholder="Type your project details....">@p.Project_datail</textarea>
+
+						</div>
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-file"></span>
+							<input type="text" name="price" placeholder="Price" value="@p.Price" required>
+						</div>
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-number"></span>
+							<input type="text" name="success" placeholder="Success" value="@p.Success" required>
+						</div>
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-number"></span>
+							<input type="number" name="siret" placeholder="Siret" value="@p.Siret" required>
+						</div>
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+
+							<img src="~/assets/@p.Avatar>" class="image-layer" />
+							<span class="icon flaticon-file "></span>
+							<input type="file" name="avatar" placeholder="Avatar " value="@p.Avatar" required>
+						</div>
+
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<span class="icon flaticon-file">Availability</span>
+
+							<input type="checkbox" name="availability" placeholder="availability Address" value="@p.Availability" checked value="checked" />
+						</div>
+						<!-- Form Group -->
+						<div class="form-group col-lg-6 col-md-6 col-sm-12">
+							<button class="theme-btn btn-style-three" type="submit" name="go" value="updateProfil"><span class="txt">Update</span></button>
+						</div>
+
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>

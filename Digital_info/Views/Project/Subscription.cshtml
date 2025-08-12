@@ -1,0 +1,364 @@
+﻿
+@{
+//Client c = ViewData["client"] as Client;
+
+}
+@*<link rel="stylesheet" href="~/assets/css/styleStrip.css">*@
+<link rel="stylesheet" href="~/assets/css/checkout.css" />
+
+<section class="page-title" style="background-image: url(/assets/images/background/8.jpg); background-size:200vh; background-position:center; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to our company</div>
+			<h1>Find your mentor</h1>
+		</div>
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Find your mentor</li>
+			</ul>
+		</div>
+	</div>
+</section>
+<!-- Process Section -->
+<section class="education-section">
+	<div class="auto-container">
+		<div class="inner-container">
+			<div class="row clearfix">
+				<!-- Image Column -->
+				
+				<div class="price-block col-lg-6 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<h2 class="title">Early Bird</h2>
+						<div class="price"><sup>€</sup>199  / month</div>
+					@*	<div class="date">until February 10, 2022</div>*@
+						@if (Context.Session.GetString("Client_Email") != null)
+						{
+							@if ((int)ViewData["ok"] == 1)
+							{
+								<section>
+									<form asp-controller="Project" asp-action="Subscription" id="payment-form">
+										@if ((int)ViewData["ok"] == 500)
+										{
+											<div class="alert alert-danger" role="alert">
+												The subscription has not been made please respect the carracter request
+											</div>
+										}
+										@if ((int)ViewData["ok"] == 200)
+										{
+											<div class="alert alert-danger" role="alert">
+												the amount is too low for this installment
+											</div>
+										}
+										<div class="form-group col-lg-12 col-md-12 col-sm-12">
+											<span class="icon flaticon-notebook"></span>
+											<select name="pay_mode" class="custom-select-box">
+												<option value="@ViewData["paymode"]">@ViewData["paymode"]</option>
+
+											</select>
+										</div>
+
+										<li class="form-group col-md-12 col-sm-12">
+											<label>End date <em>*</em></label>
+											<input name="end_date" required type="date" value="@ViewData["enddate"]" placeholder="@ViewData["enddate"]" maxlength="14" class="form-control">
+										</li>
+										<div class="product">
+											<img src="~/assets/images/resource/education.jpg" alt="">
+
+										</div>
+										<div id="link-authentication-element">
+											<a href="@Context.Session.GetString("Client_Email")"></a>
+										</div>
+
+
+										<div class="description" id="payment-element">
+											<a href="@ViewData["pay"]">
+												<h2 class="price">@ViewData["pay"]<sup>€</sup> @ViewData["modePay"] </h2>
+											</a>
+										</div>
+										<button name="go" value="expertise" style="background: #5469d4;">
+
+											<span>Subscription now</span>
+										</button>
+										<div id="payment-message" class="hidden"></div>
+									</form>
+								</section>
+								<div class="alert alert-info " role="alert">
+
+									<a class="theme-btn reply-btn align-items-md-center" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+								</div>
+
+							}
+							else
+							{
+								<form class="form-login" asp-controller="Project" asp-action="Subscription" method="POST">
+									<ul class="form-list row">
+										<ul class="col-md-12 col-sm-12">
+
+											@if ((int)ViewData["ok"] == 500)
+											{
+												<div class="alert alert-danger" role="alert">
+													The subscription has not been made please respect the carracter request
+												</div>
+											}
+											@if ((int)ViewData["ok"] == 200)
+											{
+												<div class="alert alert-danger" role="alert">
+													the amount is too low for this installment
+												</div>
+											}
+											<div class="form-group col-lg-12 col-md-12 col-sm-12">
+												<span class="icon flaticon-notebook"></span>
+												<select name="pay_mode" class="custom-select-box">
+													<option value="">Select pay mode</option>
+													<option value="1"> Full payment </option>
+													<option value="3">Over 3 months</option>
+													<option value="6"> Over 6 months</option>
+													<option value="12"> Over 12 months</option>
+													<option value="18"> Over 18 months</option>
+												</select>
+											</div>
+
+											<li class="form-group col-md-12 col-sm-12">
+												<label>End date <em>*</em></label>
+												<input name="end_date" required type="date" maxlength="14" class="form-control">
+											</li>
+											@if ((int)ViewData["ok"] == 2)
+											{
+												<div class="alert alert-info" role="alert">
+													make sure to complete
+												</div>
+											}
+											<div class="col-lg-12">
+
+												<div class="button-box text-center">
+													<button name="go" value="check" class="purchase-btn theme-btn">Purchase Now</button>
+												</div>
+
+											</div>
+										</ul>
+									</ul>
+								</form>
+								<div class="alert alert-info " role="alert">
+
+									<a class="theme-btn reply-btn align-items-md-center" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+								</div>
+							}
+						}
+						else
+						{
+							<ul class="price-options">
+								<li><span>Language: </span>English.</li>
+								<li>We will provide translation</li>
+								<li>devices if needed.</li>
+							</ul>
+							<div class="button-box text-center">
+								<a asp-controller="Login" asp-action="ClientLog" class="purchase-btn theme-btn">Purchase Now</a>
+							</div>
+						}
+						<div class="text">
+							I am glad that you have made it! Reach your goal,
+							The payment is secure and you can choose the type of payment
+						</div>
+
+					</div>
+				</div>
+				<!-- -->
+				<div class="price-block col-lg-6 col-md-6 col-sm-12">
+					<div class="inner-box">
+						<h2 class="title">Super Early Bird</h2>
+						<div class="price"><sup>€</sup>49</div>
+@*						<div class="date">until February 10, 2022</div>
+*@						<ul class="price-options">
+
+							@if (Context.Session.GetString("Client_Email") != null)
+							{
+								<form class="form-login" id="payment-form" asp-controller="Project" asp-action="Pay" method="POST">
+									<ul class="form-list row">
+										<ul class="col-md-12 col-sm-12">
+
+											@if ((int)ViewData["ok"] == 500)
+											{
+												<div class="alert alert-danger" role="alert">
+													The subscription has not been made please respect the carracter request
+												</div>
+											}
+											@if ((int)ViewData["ok"] == 200)
+											{
+												<div class="alert alert-danger" role="alert">
+													the amount is too low for this installment
+												</div>
+											}
+											<div class="form-group col-lg-12 col-md-12 col-sm-12">
+												<span class="icon flaticon-notebook"></span>
+												<select name="pay_mode" class="custom-select-box">
+												
+													<option value="">Select pay mode</option>
+													<option value="Full"> Full payment </option>
+													<option value="3months">Over 3 months</option>
+													<option value="6months"> Over 6 months</option>
+													<option value="12months"> Over 12 months</option>
+													<option value="18months"> Over 18 months</option>
+												</select>
+											</div>
+											<li class="form-group col-md-12 col-sm-12">
+												<label>Number carte <em>*</em></label>
+												<input name="number" required type="number" maxlength="14" class="form-control">
+											</li>
+											<li class="form-group col-md-12 col-sm-12">
+												<label>Date expiration <em>*</em></label>
+												<input name="end_date" required type="date" maxlength="14" class="form-control">
+											</li>
+											<li class="form-group col-md-12 col-sm-12">
+												<label>Number cirpt <em>*</em></label>
+												<input name="cirpt" required type="number" maxlength="14" class="form-control">
+											</li>
+											@if ((int)ViewData["ok"] == 2)
+											{
+												<div class="alert alert-info" role="alert">
+													make sure to complete
+												</div>
+											}
+
+											<div class="product">
+												<img src="~/assets/images/resource/service-4.jpg" alt="">
+
+											</div>
+											<div id="link-authentication-element">
+												<a href="@Context.Session.GetString("Clients_Email")"></a>
+											</div>
+
+
+											<div class="description" id="payment-element">
+												<a href="49">
+													<h2 class="price">49<sup>€</sup> </h2>
+												</a>
+											</div>
+
+
+											<div class="col-lg-12">
+												<button id="submit">
+													<div class="spinner hidden" id="spinner"></div>
+													<span name="go" value="expertise" id="button-text">Pay now</span>
+												</button>
+												<div id="payment-message" class="hidden"></div>
+
+											</div>
+										</ul>
+									</ul>
+								</form>
+								<div class="alert alert-info " role="alert">
+
+									<a class="theme-btn reply-btn align-items-md-center" asp-controller="Client" asp-action="Profil"><span class="fa fa-reply"></span> Reply</a>
+								</div>
+							}
+							else 
+							{
+								<ul class="price-options">
+									<li><span>Language: </span>English.</li>
+									<li>We will provide translation</li>
+									<li>devices if needed.</li>
+								</ul>
+								<div class="button-box text-center">
+									<a asp-controller="Login" asp-action="ClientLog" class="purchase-btn theme-btn">Purchase Now</a>
+								</div>
+							}
+							<div class="text">
+								I am glad that you have made itI am glad that you have made it! Reach your goal,
+								The payment is secure and you can choose the type of payment.
+							</div>
+						</ul>
+
+					</div>
+				</div>
+				<!-- Content Column -->
+				
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- End Process Section -->
+<section class="price-page-section">
+	<div class="auto-container">
+		<div class="row clearfix">
+
+			<!-- Price Block -->
+			<div class="price-block col-lg-3 col-md-6 col-sm-12">
+				<div class="inner-box">
+					<div class="title">Super Early Bird</div>
+					<div class="price"><sup>$</sup>49</div>
+@*					<div class="date">until February 10, 2022</div>
+*@					<ul class="price-options">
+						<li><span>Language: </span>English.</li>
+						<li>We will provide translation</li>
+						<li>devices if needed.</li>
+					</ul>
+					<div class="button-box text-center">
+						<a href="#" class="purchase-btn theme-btn">Purchase Now</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Price Block -->
+			<div class="price-block col-lg-3 col-md-6 col-sm-12">
+				<div class="inner-box">
+					<div class="title">Early Bird</div>
+					<div class="price"><sup>$</sup>199</div>
+@*					<div class="date">until February 10, 2022</div>
+*@					<ul class="price-options">
+						<li><span>Language: </span>English.</li>
+						<li>We will provide translation</li>
+						<li>devices if needed.</li>
+					</ul>
+					<div class="button-box text-center">
+						<a href="#" class="purchase-btn theme-btn">Purchase Now</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Price Block -->
+			<div class="price-block col-lg-3 col-md-6 col-sm-12">
+				<div class="inner-box">
+					<div class="title">Regular Deal</div>
+					<div class="price"><sup>$</sup>249</div>
+@*					<div class="date">until February 10, 2022</div>
+*@					<ul class="price-options">
+						<li><span>Language: </span>English.</li>
+						<li>We will provide translation</li>
+						<li>devices if needed.</li>
+					</ul>
+					<div class="button-box text-center">
+						<a href="#" class="purchase-btn theme-btn">Purchase Now</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Price Block -->
+			<div class="price-block col-lg-3 col-md-6 col-sm-12">
+				<div class="inner-box">
+					<div class="title">Team Birds</div>
+					<div class="price"><sup>$</sup>399</div>
+@*					<div class="date">until February 10, 2022</div>
+*@					<ul class="price-options">
+						<li><span>Language: </span>English.</li>
+						<li>We will provide translation</li>
+						<li>devices if needed.</li>
+					</ul>
+					<div class="button-box text-center">
+						<a href="#" class="purchase-btn theme-btn">Purchase Now</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
