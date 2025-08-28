@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ClientController!{% endblock %}
+
+{% block body %}
+{# <style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style> #}
+<div class="example-wrapper">
+<section class="page-title" style="background-image: url(/assets/images/background/1.jpg); background-size:200vh; background-position:top; background-repeat:no-repeat;">
+	<div class="auto-container">
+		<div class="content">
+			<div class="text">Welcome to your future</div>
+			<h1>Service mentor</h1>
+		</div>
+		{% if block("email") is defined %}
+
+		<div class="breadcrumb-outer">
+			<ul class="page-breadcrumb">
+				<li><a asp-controller="Home" asp-action="Index">Home</a></li>
+				<li>Client</li>
+			</ul>
+		</div>
+		{% endif %}
+	</div>
+</section>
+ {{form(form)}}
+{% endblock %}
