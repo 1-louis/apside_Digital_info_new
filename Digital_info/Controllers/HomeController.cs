@@ -15,11 +15,10 @@ namespace Digital_info.Controllers
 
         public IActionResult Index()
         {
-            Database.Close();
-            Database.Connect();
+			Database.Connect();
             /*Services serv = new Services();*/
            
-           // ViewData["ExperienceTop6"] = new Experience_DAO().getBestByNBR(0); // affichage les 6 mieux notés 
+            ViewData["ExperienceTop6"] = new Experience_DAO().getBestByNBR(6); // affichage les 6 mieux notés 
 
 			Database.Close();
    

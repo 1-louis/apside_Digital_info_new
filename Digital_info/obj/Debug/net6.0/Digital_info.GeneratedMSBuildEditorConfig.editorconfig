@@ -9,145 +9,145 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Digital_info
 build_property.RootNamespace = Digital_info
-build_property.ProjectDir = c:\Users\Ordinateur\Documents\Dossier_projet_professionnel[\Digital_info\
+build_property.ProjectDir = C:\Users\utilisateur\Desktop\Projet Final\.vs\Digital_info\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Ordinateur\Documents\Dossier_projet_professionnel[\Digital_info
+build_property.MSBuildProjectDirectory = C:\Users\utilisateur\Desktop\Projet Final\.vs\Digital_info
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Admin3060/Client.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Admin3060/Client.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4zMDYwXENsaWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Admin3060/ClientAdd.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Admin3060/ClientAdd.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4zMDYwXENsaWVudEFkZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Admin3060/ClientEdit.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Admin3060/ClientEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4zMDYwXENsaWVudEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Admin3060/Dashboard.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Admin3060/Dashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4zMDYwXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Admin3060/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Admin3060/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW4zMDYwXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Appointment/EditAppointment.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Appointment/EditAppointment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcRWRpdEFwcG9pbnRtZW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Appointment/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Appointment/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Client/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Client/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Client/Management.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Client/Management.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XE1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Client/Profil.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Client/Profil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFByb2ZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Client/Service_details.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Client/Service_details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XFNlcnZpY2VfZGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Home/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Home/Privacy.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Interest/Consultancy.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Interest/Consultancy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJlc3RcQ29uc3VsdGFuY3kuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Interest/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Interest/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW50ZXJlc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Login/ClientLog.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Login/ClientLog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2xpZW50TG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Login/ManagementPassword.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Login/ManagementPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTWFuYWdlbWVudFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Login/ProfLog.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Login/ProfLog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUHJvZkxvZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Professional/EditServices.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Professional/EditServices.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc2lvbmFsXEVkaXRTZXJ2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Professional/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Professional/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc2lvbmFsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Professional/Management.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Professional/Management.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc2lvbmFsXE1hbmFnZW1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Professional/Services.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Professional/Services.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZmVzc2lvbmFsXFNlcnZpY2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Project/cancel.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Project/cancel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxjYW5jZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Project/Checkout.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Project/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Project/Index.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Project/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Project/Subscription.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Project/Subscription.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxTdWJzY3JpcHRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Project/success.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Project/success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvamVjdFxzdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Shared/Error.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Shared/_PartialAdmin.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Shared/_PartialAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/_ViewImports.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/_ViewStart.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Ordinateur/Documents/Dossier_projet_professionnel\[/Digital_info/Views/Shared/_Layout.cshtml]
+[C:/Users/utilisateur/Desktop/Projet Final/.vs/Digital_info/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-quchropyuq

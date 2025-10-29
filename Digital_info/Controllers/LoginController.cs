@@ -51,7 +51,7 @@ namespace Digital_info.Controllers
 							HttpContext.Session.SetString("Client_Email", c.Email);
 							HttpContext.Session.SetString("firstname", c.Firstname);
 							HttpContext.Session.SetString("lastname", c.Lastname);
-							HttpContext.Session.SetString("Clients_Password", c.Password);
+							//HttpContext.Session.SetString("Clients_Password", c.Password);
 
 							return RedirectToAction("Profil", "Client");
 						}
@@ -63,9 +63,9 @@ namespace Digital_info.Controllers
 			if (go == "clientSign")//verification si go à la valleur clientSing
 			{
 
+			
 
-
-                if (firstname != null && lastname != null && phone != null && email != null && password != null && passwordComf != null)//veriffication si les valeurs sont reçu  
+				if (firstname != null && lastname != null && phone != null && email != null && password != null && passwordComf != null)//veriffication si les valeurs sont reçu  
 				{
 					string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);//Achage du mots de passe  
 				  //verification si l'email est bon 
@@ -78,31 +78,26 @@ namespace Digital_info.Controllers
 					}
 					else
 					{
-                        Database.Close();
-
-                        Database.Connect();
-
-                        //sauvegarde des informations 
-                        Client c = new Client(firstname, lastname, address, city, phone, age, email, passwordHash);
+						//sauvegarde des informations 
+						Client c = new Client(firstname, lastname, address, city, phone, age, email, passwordHash);
 						new Client_DAO().save(c);
 						ViewData["inscription"] = 1;
 						HttpContext.Session.SetInt32("Clients_id", c.Id_client);
 						HttpContext.Session.SetString("firstname", c.Firstname);
 
 						return RedirectToAction("ClientLog", "Login");
-                        Database.Close();
-                    }
+
+					}
 
 
 
-                }
+				}
+			}
 
-            }
+			
+				
 
-
-
-
-            return View();
+			return View();
 		}
 		public IActionResult ProfLog(string? go, string? firstname, string? lastname, string? email, string? password, string? passwordComf,
 			int siret, string? project_qualification, string? project_datail, string? availability, double price, string? success
@@ -140,7 +135,7 @@ namespace Digital_info.Controllers
 							HttpContext.Session.SetString("Professional_Email", c.Email);
 							HttpContext.Session.SetString("firstname", c.Firstname);
 							HttpContext.Session.SetString("lastname", c.Lastname);
-							HttpContext.Session.SetString("Professional_Password", c.Password);
+							//HttpContext.Session.SetString("Professional_Password", c.Password);
 
 
 							return RedirectToAction("Services", "Professional");
